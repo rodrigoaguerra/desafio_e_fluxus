@@ -44,7 +44,7 @@ npm start
 # Detalhes sobre a solução
 Para atender à proposta do desafio, eu criei uma API simples com Node.js, que contém duas rotas: uma rota raiz ('/') para verificar o funcionamento adequado da API e outra rota ('/valid_password') para solucionar o problema proposto.
 Para garantir que a senha atenda às condições específicas, as verificações são realizadas em etapas, e caso a senha não satisfaça uma ou mais das condições, a API retorna uma resposta com o status 400, juntamente com um objeto JSON contendo um status booleano e uma mensagem em string. Incluí a mensagem na resposta para permitir que o usuário saiba exatamente qual condição da senha não foi atendida.
-Quanto à dúvida sobre espaços em branco na senha, optei por defini-los como inválidos, a fim de aumentar a segurança da senha e prevenir possíveis ataques por meio de engenharia social.
+Quanto à dúvida sobre espaços em branco na senha, optei por defini-los como inválidos.
 A parte mais complexa da aplicação foi a verificação de caracteres repetidos, que foi resolvida por meio de uma função específica que criei para esse propósito. Além disso, a ligação do front-end foi outra parte interessante e desafiadora do projeto, que foi solucionada com o uso da função 'fetch' nativa do JavaScript para enviar os dados do formulário para a API.
 
 # Pré-requisitos
