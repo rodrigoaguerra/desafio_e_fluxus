@@ -31,8 +31,19 @@ function Copyright(props) {
 
 const theme = createTheme();
 
-export default function SignIn() {
+export default function Form() {
   
+  const [showPassword, setShowPassword] = React.useState(false);
+
+  const [message, setMessage] = React.useState(null);
+
+   const [isError, setIsError] = React.useState(false);
+
+  const getResponse = (data) => {
+    setMessage(data?.mensagem);
+    setIsError(!data?.status);
+  }
+
   const handleSubmit = (event) => {
     event.preventDefault();
     
@@ -45,11 +56,10 @@ export default function SignIn() {
       body: JSON.stringify(data)
     })
       .then(response => response.json())
-      .then(data => console.log('terminou aqui :', data))
+      .then(data =>  getResponse(data))
       .catch(error => console.error(error));
   };
 
-  const [showPassword, setShowPassword] = React.useState(false);
 
   const handleClickShowPassword = () => setShowPassword((show) => !show);
 
@@ -74,7 +84,7 @@ export default function SignIn() {
             Valida Senha
           </Typography>
           <Box component="form" onSubmit={handleSubmit} noValidate sx={{ mt: 1 }}>
-            <FormControl  fullWidth error variant="outlined">
+            <FormControl fullWidth variant="outlined" error={isError} >
               <InputLabel htmlFor="password">Digite a senha</InputLabel>
               <OutlinedInput
                 required
@@ -97,7 +107,7 @@ export default function SignIn() {
                 label="Valida Senha"
                 aria-describedby="component-error-text"
               />
-              <FormHelperText id="component-error-text">Error</FormHelperText>
+              {message && <FormHelperText id="component-error-text">{message}</FormHelperText>}
             </FormControl>
             <Button
               type="submit"
