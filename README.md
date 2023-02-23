@@ -9,35 +9,38 @@ Este projeto é um desafio proposto pela e-fluxus, que tem como objetivo impleme
   1. Abra o terminal e clone o repositorio
 ```
 git clone git@github.com:rodrigoaguerra/desafio_e_fluxus.git
+```
   2. Abra a pasta desafio_e_fluxus/api/
 ```
 cd desafio_e_fluxus/api/
-  3. Instalar as dependencias do projeto
+```
+3. Instalar as dependencias do projeto
 ```
 npm install
+``` 
   4. Rodar o servidor
 ```
 npm start
-
+```
 Obs: se tudo ocorreu como planejado deve aparecer a seguinte mensagem
 ```
 > desafio_e_fluxus@1.0.0 start
-```
 > node index.js
-```
 Servidor iniciado na porta 5000!
-
+```
 # Instalação do front end
   1. Na pasta raiz do projeto navegue a pasta front
 ```
 cd front/
+```
   2. Instalar as dependencias do projeto
 ```
 npm install
+```
   3. Rodar o Front End
 ```
 npm start
-
+```
 # Detalhes sobre a solução
 
 
